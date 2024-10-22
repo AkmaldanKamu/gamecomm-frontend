@@ -265,13 +265,13 @@ header .signup-btn {
     height: auto;
 }
 
-.partner .logo img.imbalance-logo {
+.partner .logo img.imbalance-logo { /* Bisa dibesarin atau kecilin dengan normal */
     width: 100px; /* Mengatur lebar */
     height: 100px; /*Mengatur tinggi*/
     object-fit: contain; /* Untuk memastikan gambar tetap proporsional */
 }
 
-.partner .logo img.discovery-logo {
+.partner .logo img.discovery-logo { /* Bisa dibesarin tapi kegeser juga logo lainnya */
     width: 200px;
     height: 200px; /*Mengatur tinggi*/
     object-fit: contain; /* Untuk memastikan gambar tetap proporsional */
