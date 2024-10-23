@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
-}   
+    font-family: "Open Sans", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Arial', sans-serif;
@@ -57,8 +62,9 @@ header nav ul {
     list-style-type: none;
     display: flex;
     gap: 70px;
-    margin-left: 120px;
+    margin-left: 50px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 header nav ul li {
@@ -125,18 +131,42 @@ header .signup-btn {
     color: #ffffff;
 }
 
+/* POP UP SURUH LOGIN */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 54, 54, 0.7); /* abu-abu dengan transparansi */
+    display: none; /* awalnya tersembunyi */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+
 /*Bagian Body*/
 .pertama {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 300px 90px;
+    padding: 300px 200px;
     background: url('https://i.pinimg.com/736x/d7/76/71/d77671c2f12a4e2ce9ef44a9c95d4c9a.jpg') no-repeat center center/cover;
-    height: 530px;
+    /* Atur ketinggian area parallax */
+    height: 100vh;
+            
+    /* Efek paralaks */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none;
 }
 
 .pertama-text {
     max-width: 50%;
+    z-index: 1;
 }
 
 .pertama-text h1 {
@@ -194,9 +224,13 @@ header .signup-btn {
     animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
 
+
+/* Latest News Section */
 .latest-news {
     padding: 50px;
-    background: url();
+    background-color: rgb(71, 71, 71);
+    z-index: 10;
+    position: absolute;
 }
 
 .latest-news h2 {
@@ -235,11 +269,15 @@ header .signup-btn {
     color: #ccc;
 }
 
+
+/* Partner Section */
 .partner{
     background: linear-gradient(to bottom, #585858, #726f6f, rgb(41, 40, 40));
+    margin-top: 600px;
     padding-top: 100px;
     padding-bottom: 100px;
     padding-bottom: 5%;
+    position: relative;
 }
 
 .partner h2{    
@@ -265,13 +303,13 @@ header .signup-btn {
     height: auto;
 }
 
-.partner .logo img.imbalance-logo { /* Bisa dibesarin atau kecilin dengan normal */
+.partner .logo img.imbalance-logo {
     width: 100px; /* Mengatur lebar */
     height: 100px; /*Mengatur tinggi*/
     object-fit: contain; /* Untuk memastikan gambar tetap proporsional */
 }
 
-.partner .logo img.discovery-logo { /* Bisa dibesarin tapi kegeser juga logo lainnya */
+.partner .logo img.discovery-logo {
     width: 200px;
     height: 200px; /*Mengatur tinggi*/
     object-fit: contain; /* Untuk memastikan gambar tetap proporsional */
