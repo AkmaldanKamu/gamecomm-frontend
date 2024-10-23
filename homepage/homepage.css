@@ -1,657 +1,314 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: "Open Sans", serif;
-}   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamecomm Indonesia</title>
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://kit.fontawesome.com/091372dc96.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://i.pinimg.com/736x/11/5e/ec/115eec250dc9f082cdc77511c8e5058d.jpg">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a onclick="showPopup()">Article</a></li>
+                <li><a href="">Event</a></li>
+                <li><a href="http://127.0.0.1:5501/homepage/News%20Page/news.html">News</a></li>
+                <li><a href="http://127.0.0.1:5500/About%20Us/aboutus.html">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <a href="http://127.0.0.1:5500/homepage/Manage%20user/user.html" class="signup-btn">Sign Up</a>
+    </header>
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #333333;
-    color: #fff;
-    line-height: 1.6;
-}
-
-body::-webkit-scrollbar {
-    width: 0.25rem;
-}
-
-body::-webkit-scrollbar-track {
-    background: #1e1e24;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: grey;
-}
-
-/*Header Page*/
-header {
-    position: sticky;
-    top: 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 90px;
-    background: rgb(53, 52, 52);
-    height: 90px;
-    z-index: 999;
-}
+    <!-- Bagian overlay dan popup -->
+  <div class="overlay" id="popupOverlay">
+    <div class="popup">
+      <div class="popup-content">
+        <p>Login Dulu Yuk! Supaya bisa<br>akses semua fitur Website Gamecomm Indonesia!</p>
+      </div>
+      <video class="video-zivana" src="mulut 3.mp4" alt="Gambar kanan" autoplay muted loop></video>
+    </div>
+  </div>
 
 
-header .logo img {
-    position: relative;
-    margin-top: 37px;
-    right: 8px;
-    width: 170px;
-    max-height: 80px;
-}
+  <script>
+    // Fungsi untuk menampilkan popup
+    function showPopup() {
+      document.getElementById('popupOverlay').classList.add('active');
+    }
 
-.nav-menu {
-    display: flex;
-    justify-content: center; /* Pusatkan item secara horizontal */
-    align-items: center;
-    flex-grow: 1;
-}
+    // Fungsi untuk menutup popup saat klik di luar kotak
+    document.getElementById('popupOverlay').addEventListener('click', function(event) {
+      if (event.target === this) {
+        this.classList.remove('active');
+      }
+    });
+  </script>
 
-header nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 70px;
-    margin-left: 50px;
-    margin-top: 10px;
-    cursor: pointer;
-}
 
-header nav ul li {
-    display: inline;
-}
 
-header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-}
+    <!-- Home Section -->
+    <section class="pertama">
+        <div class="pertama-text">
+            <h1 id="text">GAMECOMM CORPORATION, MAKE THE BEST WAY FOR GAMING INFORMATION</h1>
+            <p>With our dedication to provide top-tier gaming news, 
+                <br>we ensure that you get the best updates in the world of E-sport</br></p>
+            <a href="#" class="learn-more-btn">Learn more about us</a>
+        </div>
+        <div class="zivana-image">
+            <img id="image" src="GC INDO 2.png" alt="Logo Gamecomm">
+        </div>
+    </section>
 
-header a {
-    position: relative;
-    transition: transform 0.3s ease;
-}
+    <script>
+        let text = document.getElementById('text');
+        let image = document.getElementById('image');
 
-header a:hover {
-    color: rgb(233, 233, 233);
-    transform: translateY(2px);
-}
+        window.addEventListener('scroll', () => {
+            let value = window.scrollY;
 
-header a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
-    transition: width 0.3s ease;
-}
+            text.style.marginTop = value * 0.9 + 'px';
+            image.style.marginTop = value * 1.0 + 'px';
 
-header a:hover::after {
-    font-size: 0px;
-    width: 100%;
-    background: rgb(253, 253, 253);
-}
+        });
+    </script>
 
-header img {
-    width: 45px;
-    height: auto;
-    margin-right: 10px;
-    border-radius: 40px;
-}
+    <!-- Latest News Section -->
+    <style>
+        @keyframes appear {
+        from{
+             opacity: 0;
+             scale: 0.5;
+        }
+        to {
+             opacity: 1;
+             scale: 1;
+        }
+    }
+  
+    .news-item {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+    </style>
 
-header .signup-btn {
-    color: white
+    <section class="latest-news">
+        <h2>Latest News</h2>
+        <div class="news-grid">
+            <div class="news-item">
+                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 1">
+                <h3>News Title 1</h3>
+                <p>Brief description about the news.</p>
+            </div>
+            <div class="news-item">
+                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 2">
+                <h3>News Title 2</h3>
+                <p>Brief description about the news.</p>
+            </div>
+            <div class="news-item">
+                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 3">
+                <h3>News Title 3</h3>
+                <p>Brief description about the news.</p>
+            </div>
+        </div>
+    </section>
     
-}
- 
 
-.signup-btn {
-    padding: 10px 20px;
-    text-decoration: none;
-    background-color: #4d4d4d;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
+    <!-- Partners Section -->
+    <section class="partner">
+        <h2>Our Partners:</h2>
+        <div class="logo">
+            <img src="/About Us/KEMENPAREKRAF.png">
+            <img src="/About Us/logokemendagri.png">
+            <img src="/About Us/kemenkomarves.png">
+            <img src="/About Us/Kemenpora.png">
+            <img src="/About Us/KEMENDIKBUDRISTEK.png">
+            <img src="/About Us/KEMKOMINFO.png">
+            <img src="/About Us/Kementerian Ketenagakerjaan.png">
+            <img src="/About Us/PBESI.png">
+            <img src="/About Us/BI 3.png">
+            <img src="/About Us/BCA SHADOW.png">
+            <img src="/About Us/BNI PUTIH.png">
+            <img class="imbalance-logo" src="logo imbalance (1).png">
+            <img src="/About Us/BOB-logo_vertical-white-on-color.png">
+            <img src="/About Us/TOGO LOGO baru shadow.png">
+            <img src="/About Us/LOGO SERENA VETOR.png">
+            <img src="DISCOVERY_LOGO_B-17-17__1_-removebg-preview.png">
+            <img src="/About Us/Logo Digifest White.png">
+            <img src="/About Us/KG.png">
+            <img src="Championship Blue.png">
+            <img src="/About Us/grab putih.png">
+            <img src="/About Us/GOX.png">
+            <img src="/About Us/SKYA_Primary Logo.png">
+            <img src="/About Us/Logo-VCG.png">
+            <img src="/About Us/Anantarupa Logo-Color.png">
+            <img src="/About Us/BLACK_HEX_000000.png">
+            <img src="/About Us/Main_Logo_of_National_Research_and_Innovation_Agency_of_Indonesia.svg.png">
+            <img src="/About Us/logo krevasi 01 transparentArtboard 1.png">
+            <img src="/About Us/rev.png">
+            <img src="/About Us/LOGO BOBOBOX TRANSPARANT.png">
+            <img src="/About Us/w3gg`.png">
+            <img src="/About Us/Logo-VCG.png">
+            <img src="/About Us/RRI LOGO 2.png">
+            <img src="/About Us/AGI.png">
+            <img src="/About Us/ATTN.png">
+            <img src="/About Us/foresthree-logo-new white.png">
+            <img src="/About Us/plextone 2.png">
+            <img src="/About Us/Koding Next 2.png">
+            <img src="/About Us/2.png">
+            <img src="NUON Melon Telkom.jpg">
+            <img src="/About Us/Logo Wu Hub.png">
+            <img src="/About Us/loklok.png">
+            <img src="/About Us/FF v.1.png">
+            <img src="/About Us/MLbb (2).png">
+            <img src="/About Us/Logo Smashing Feathers.png">
+            <img src="/About Us/LogoWhite.png">
+            <img src="">
+            <img src="">
+            <img src="">
+            <img src="">
+            <img src="/About Us/CS2 v.1.png">
+        </div>
+    </section>
 
-.signup-btn:hover {
-    transform: translateY(-3px);
-    background-color: #444343;
-    color: #ffffff;
-}
+    <!-- Expo Section -->
+    <section class="home">
+        <img class="video-slide active" src="IMG_7656.jpg" autoplay muted loop></video>
+        <video class="video-slide" src="BOG.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="sekuya.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="https://v1.pinimg.com/videos/mc/720p/64/2c/d3/642cd381c872075ae75a228284b262de.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="https://v1.pinimg.com/videos/mc/720p/3d/42/cb/3d42cb828c011bdaf2d87f1c98dddd71.mp4" autoplay muted loop></video>
 
-/* POP UP SURUH LOGIN */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(54, 54, 54, 0.7); /* abu-abu dengan transparansi */
-    display: none; /* awalnya tersembunyi */
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-  /* CSS untuk kotak popup */
-  .popup {
-    background-color: transparent;
-    color: white;
-    border-radius: 20px;
-    width: 1000px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transform: translateY(100%); /* Mulai di luar layar */
-    transition: transform 0.5s ease; /* Durasi transisi */
-  }
-
-  .popup-content p {
-    font-size: 2.3em;
-    font-weight: 700;
-  }
-
-  .popup video {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 50px;  
-  }
-
-  /* CSS untuk memunculkan overlay saat popup aktif */
-  .overlay.active {
-    display: flex;
-  }
-
-  .overlay.active .popup {
-    transform: translateY(0); /* Animasi dari bawah ke atas */
-}
+        <div class="content active">
+            <h1>Company<br><span>Profile</span></h1>
+            <p>Dalam upaya mendukung pertumbuhan industri gim dan animasi di Indonesia, INTI Gamecomm and Animation Expo 2024 diselenggarakan sebagai platform kolaborasi antara profesional industri, perwakilan pemerintah, dan institusi pendidikan untuk berbagi wawasan. Acara ini bertujuan untuk mendorong pengembangan talenta lokal, mempromosikan kreativitas digital, dan mempercepat pertumbuhan industri gim di Indonesia.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Event<br><span>Activation</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non ligula accumsan, viverra tellus quis, eleifend lacus. Curabitur quis justo diam. Nunc sit amet dapibus ante. Sed sit amet finibus nisi. Phasellus viverra nulla eros, et tempor sapien dignissim at. Vivamus mollis tempus ante at vehicula. In hac habitasse platea dictumst. Praesent lectus enim, posuere in posuere vitae, vestibulum id mi. Donec nec ultricies arcu. Vivamus sodales enim vestibulum nibh scelerisque luctus. Ut nec nisl at velit lobortis tempus sed sit amet nisl. Maecenas interdum erat eu est lobortis consectetur</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Collaboration<br><span>IP</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non ligula accumsan, viverra tellus quis, eleifend lacus. Curabitur quis justo diam. Nunc sit amet dapibus ante. Sed sit amet finibus nisi. Phasellus viverra nulla eros, et tempor sapien dignissim at. Vivamus mollis tempus ante at vehicula. In hac habitasse platea dictumst. Praesent lectus enim, posuere in posuere vitae, vestibulum id mi. Donec nec ultricies arcu. Vivamus sodales enim vestibulum nibh scelerisque luctus. Ut nec nisl at velit lobortis tempus sed sit amet nisl. Maecenas interdum erat eu est lobortis consectetur</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Make Division<br><span>For Actiovation</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non ligula accumsan, viverra tellus quis, eleifend lacus. Curabitur quis justo diam. Nunc sit amet dapibus ante. Sed sit amet finibus nisi. Phasellus viverra nulla eros, et tempor sapien dignissim at. Vivamus mollis tempus ante at vehicula. In hac habitasse platea dictumst. Praesent lectus enim, posuere in posuere vitae, vestibulum id mi. Donec nec ultricies arcu. Vivamus sodales enim vestibulum nibh scelerisque luctus. Ut nec nisl at velit lobortis tempus sed sit amet nisl. Maecenas interdum erat eu est lobortis consectetur</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Dukung Kami Agar<br><span>Terus Berkarya</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non ligula accumsan, viverra tellus quis, eleifend lacus. Curabitur quis justo diam. Nunc sit amet dapibus ante. Sed sit amet finibus nisi. Phasellus viverra nulla eros, et tempor sapien dignissim at. Vivamus mollis tempus ante at vehicula. In hac habitasse platea dictumst. Praesent lectus enim, posuere in posuere vitae, vestibulum id mi. Donec nec ultricies arcu. Vivamus sodales enim vestibulum nibh scelerisque luctus. Ut nec nisl at velit lobortis tempus sed sit amet nisl. Maecenas interdum erat eu est lobortis consectetur</p>
+            <a href="#">Read More</a>
+        </div>
 
 
-/*Bagian Body*/
-.pertama {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 300px 90px;
-    background: url('https://i.pinimg.com/736x/d7/76/71/d77671c2f12a4e2ce9ef44a9c95d4c9a.jpg') no-repeat center center/cover;
-    height: 530px;
-}
+        <div class="media-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
 
-.pertama-text {
-    max-width: 50%;
-}
+    <script type="text/javascript">
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
 
-.pertama-text h1 {
-    font-size: 40px;
-    font-weight: 790;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
-}
+        var sliderNav = function(manual){
+          btns.forEach((btn) => {
+            btn.classList.remove("active");
+          });
 
-.pertama-text p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.3s 1 forwards;
-}
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
+          });
 
-.learn-more-btn {
-    padding: 15px 20px;
-    background-color: #666869;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
-}
+          contents.forEach((content) => {
+            content.classList.remove("active");
+          });
 
-@keyframes animate {
-    from {
-        opacity: 0;
-        transform: translate(0, 100px);
-        filter: blur(33px);
-    }
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="row">
+            <div class="col">
+                <img src="footer logo.png" class="logo">
+                <p>Segera hubungi kami jika mengalami kendala apapun saat menggunakan website kami, 
+                    silahkan kunjungi media sosial kami untuk info lebih lanjut.</p>
+            </div>
+            <div class="col">
+                <h3>Office <div class="underline"><span></span></div></h3>
+                <p>Jalan Kalibata</p>
+                <p>Jakarta, Indonesia</p>
+                <p>Kalibata, PIN: 1234, Indonesia</p>
+                <p class="email-id">gamecommindoneia@gmail.com</p>
+                <h4>0812345678910</h4>
+            </div>
+            <div class="col">
+                <h3>Links <div class="underline"><span></span></div></h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Article</a></li>
+                    <li><a href="">Event</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Newsletter <div class="underline"><span></span></div></h3>
+                <form>
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email id" required>
+                    <button type="submit"><i class="fa-solid fa-arrow-right" style="color: white;"></i></button>
+                </form>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://www.instagram.com/gamecommid/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">&copy; Gamecomm Indonesia - All Rights Reserved</p>
+    </footer>
     
-    to {
-        opacity: 1;
-        transform: translate(0);
-        filter: blur(0);
-    }
-}
-
-.learn-more-btn:hover {
-    transform: translateY(-10px);
-    background-color: #444343;
-    color: #ffffff;
-}
-
-.zivana-image img {
-    border-radius: 20px;
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
-}
-
-.latest-news {
-    padding: 50px;
-    background: url();
-}
-
-.latest-news h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.news-grid {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.news-item {
-    background-color: #3e3e3e;
-    padding: 30px;
-    width: 30%;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.news-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.news-item h3 {
-    margin: 20px 0 10px;
-    font-size: 20px;
-}
-
-.news-item p {
-    font-size: 16px;
-    color: #ccc;
-}
-
-
-/* Partner Section */
-.partner{
-    background: linear-gradient(to bottom, #585858, #726f6f, rgb(41, 40, 40));
-    padding-top: 100px;
-    padding-bottom: 100px;
-    padding-bottom: 5%;
-}
-
-.partner h2{    
-    color: #fff;
-    text-align: center;
-    font-family: sans-serif;
-    margin-top: -30px;
-    padding-bottom: 25px;
-    margin-right: 5px;
-}
-
-.partner .logo{
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(9, 1fr);
-    align-items: center;
-    margin: 20px -80px;
-    gap: 47px;
-}
-
-.logo img{
-    width: 100px;
-    height: auto;
-}
-
-.partner .logo img.imbalance-logo {
-    width: 100px; /* Mengatur lebar */
-    height: 100px; /*Mengatur tinggi*/
-    object-fit: contain; /* Untuk memastikan gambar tetap proporsional */
-}
-
-.partner .logo img.discovery-logo {
-    width: 200px;
-    height: 200px; /*Mengatur tinggi*/
-    object-fit: contain; /* Untuk memastikan gambar tetap proporsional */
-    z-index: 2;
-}
-
-/*EXPO SECTION*/
-section{
-    padding: 100px 200px;
-}
-
-.home {
-    position: relative;
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: grey;
-}
-
-.home:before{
-    z-index: 777;
-    content: '';
-    position: absolute;
-    background: rgba(3, 96, 251, 0.3);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.home .content {
-    z-index: 888;
-    color: white;
-    width: 70%;
-    margin-top: 50px;
-    display: none;
-}
-
-.home .content.active{
-    display: block;
-}
-
-.home .content h1 {
-    font-size: 4em;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    line-height: 75px;
-    margin-bottom: 40px;
-}
-
-.home .content h1 span{
-    font-size: 1.2em;
-    font-weight: 600;
-}
-
-.home .content p{
-    margin-bottom: 65px;
-}
-
-.home .content a{
-    background: white;
-    padding: 15px 35px;
-    color: grey;
-    font-size: 1.1em;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 2px;
-}
-
-.home .media-icons {
-    z-index: 888;
-    position: absolute;
-    right: 30px;
-    display: flex;
-    flex-direction: column;
-    transition: 0.5s ease;
-}
-
-.home .media-icons a{
-    color: black;
-    font-size: 1.5em;
-    transition: 0.3 ease;
-}
-
-.home .media-icons a:not(:last-child){
-    margin-bottom: 20px;
-}
-
-.home .media-icons a:hover {
-    transform: scale(1.3);
-}
-
-.home video{
-    z-index: 000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slider-navigation{
-    z-index: 888;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(80px);
-    margin-bottom: 12px;
-}
-
-.slider-navigation .nav-btn {
-    width: 12px;
-    height: 12px;
-    background: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
-    transition: 0.3 ease;
-}
-
-.slider-navigation .nav-btn.active {
-    background: grey;
-}
-
-.slider-navigation .nav-btn:not(:last-child){
-    margin-right: 20px;
-}
-
-.slider-navigation .nav-btn:hover{
-    transform: scale(1.2);
-}
-
-.video-slide{
-    position: absolute;
-    width: 100%;
-    clip-path: circle(0% at 0 50%);
-}
-
-.home img {
-    left: 0px;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.video-slide.active{
-    clip-path: circle(150% at 0 50%);
-    transition: 2s ease;
-    transition-property: clip-path;
-}
-
-@media (max-width: 1040px){
-    section {
-        padding: 100px 20px;
-    }
-
-    .home .media-icons {
-        right: 15px;
-    }
-}
-
-.menu-btn{
-    background-size: 30px;
-    background-position: center;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: 0.3 ease;
-}
-
-.menu-btn.active{
-    z-index: 999;
-    background: url(close.png)no-repeat;
-    background-size: 25px;
-    background-position: center;
-    transition: 0.3 ease;
-}
-
-/*FOOTER SECTION*/
-footer {
-    width: 100%;
-    bottom: 0;
-    background: linear-gradient(to right, rgb(36, 35, 35), rgb(0, 0, 0));
-    color: #fff;
-    padding: 80px 0 30px;
-    font-size: 13px;
-    line-height: 20px;
-}
-
-.row {
-    width: 85%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.col {
-    flex-basis: 25%;
-    padding : 10px;
-}
-
-.col:nth-child(2), .col:nth-child(3) {
-    flex-basis: 15%;
-}
-
-.logo {
-    width: 80px;
-    margin-bottom: 30px;
-}
-
-.col h3{
-    width: fit-content;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.email-id{
-    width: fit-content;
-    border-bottom: 1px solid #ccc;
-    margin: 20px 0;
-}
-
-ul li {
-    list-style: none;
-    margin-bottom: 12px;
-}
-
-ul li a {
-    text-decoration: none;
-    color: white;
-}
-
-form {
-    padding-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 50px;
-}
-
-form .far {
-    font-size: 10px;
-    margin-right: 10px;
-}
-
-form input{
-    width: 100%;
-    background: transparent;
-    color: white;
-    border: 0;
-    outline: none;
-}
-
-form button{
-    background: transparent;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-}
-
-form button .fas {
-    font-size: 16px;
-    color: #ccc;
-}
-
-.social-icons .fa-brands {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    color: #000;
-    background: #fff;
-    margin-right: 15px;
-    cursor: pointer;
-}
-
-hr {
-    width: 90%;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    margin: 20px auto;
-}
-
-.copyright{
-    text-align: center;
-}
-
-.underline {
-    width: 100%;
-    height: 5px;
-    background: #767676;
-    border-radius: 3px;
-    position: absolute;
-    top: 25px;
-    left: 0;
-    overflow: hidden;
-}
-
-.underline span{
-    width: 15px;
-    height: 100%;
-    background: #fff;
-    border-radius: 3px;
-    position: absolute;
-    top: 0;
-    left: 10px;
-    animation: moving 2s linear infinite;
-}
-
-@keyframes moving{
-    0%{
-        left: -20px;
-    }
-    100%{
-        left: 100%;
-    }
-}
+    <script>
+        window.scrollTo({
+        top: 1000,  
+        behavior: 'smooth' 
+    });
+    </script>
+</body>
+</html>
