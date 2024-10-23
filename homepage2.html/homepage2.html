@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamecomm Indonesia</title>
-    <link rel="stylesheet" href="homepage2.css">
+    <link rel="stylesheet" href="homepage.css">
     <script src="https://kit.fontawesome.com/091372dc96.js"></script>
 </head>
 <body>
@@ -15,7 +15,7 @@
         </div>
         <nav class="nav-menu">
             <ul>
-                <li><a href="http://127.0.0.1:5501/Article/Isi%20Article%202/isiarticle.html#">Article</a></li>
+                <li><a href="">Article</a></li>
                 <li><a href="">Event</a></li>
                 <li><a href="http://127.0.0.1:5501/homepage/News%20Page/news.html">News</a></li>
                 <li><a href="http://127.0.0.1:5500/About%20Us/aboutus.html">About Us</a></li>
@@ -26,18 +26,32 @@
         <img src="https://i.pinimg.com/736x/6f/93/c7/6f93c71d621c7546442b927b57beefcc.jpg"><a href="http://127.0.0.1:5500/homepage/Manage%20user/user.html" class="signup-btn">Welcome, User</a>
     </header>
 
+
     <!-- Home Section -->
     <section class="pertama">
         <div class="pertama-text">
-            <h1>GAMECOMM CORPORATION, MAKE THE BEST WAY FOR GAMING INFORMATION</h1>
+            <h1 id="text">GAMECOMM CORPORATION, MAKE THE BEST WAY FOR GAMING INFORMATION</h1>
             <p>With our dedication to provide top-tier gaming news, 
                 <br>we ensure that you get the best updates in the world of E-sport</br></p>
             <a href="#" class="learn-more-btn">Learn more about us</a>
         </div>
         <div class="zivana-image">
-            <img src="https://i.pinimg.com/736x/49/5c/08/495c089001b96447ebe33e7764bc7161.jpg" alt="Logo Gamecomm">
+            <img id="image" src="GC INDO 2.png" alt="Logo Gamecomm">
         </div>
     </section>
+
+    <script>
+        let text = document.getElementById('text');
+        let image = document.getElementById('image');
+
+        window.addEventListener('scroll', () => {
+            let value = window.scrollY;
+
+            text.style.marginTop = value * 0.9 + 'px';
+            image.style.marginTop = value * 1.0 + 'px';
+
+        });
+    </script>
 
     <!-- Latest News Section -->
     <style>
@@ -112,7 +126,7 @@
             <img src="/About Us/BLACK_HEX_000000.png">
             <img src="/About Us/Main_Logo_of_National_Research_and_Innovation_Agency_of_Indonesia.svg.png">
             <img src="/About Us/logo krevasi 01 transparentArtboard 1.png">
-            <img src="/About Us/Koding Next 2.png">
+            <img src="/About Us/rev.png">
             <img src="/About Us/LOGO BOBOBOX TRANSPARANT.png">
             <img src="/About Us/w3gg`.png">
             <img src="/About Us/Logo-VCG.png">
@@ -121,15 +135,20 @@
             <img src="/About Us/ATTN.png">
             <img src="/About Us/foresthree-logo-new white.png">
             <img src="/About Us/plextone 2.png">
-            <img src="/About Us/rev.png">
+            <img src="/About Us/Koding Next 2.png">
             <img src="/About Us/2.png">
+            <img src="NUON Melon Telkom.jpg">
             <img src="/About Us/Logo Wu Hub.png">
             <img src="/About Us/loklok.png">
             <img src="/About Us/FF v.1.png">
             <img src="/About Us/MLbb (2).png">
             <img src="/About Us/Logo Smashing Feathers.png">
-            <img src="/About Us/CS2 v.1.png">
             <img src="/About Us/LogoWhite.png">
+            <img src="">
+            <img src="">
+            <img src="">
+            <img src="">
+            <img src="/About Us/CS2 v.1.png">
         </div>
     </section>
 
@@ -258,5 +277,12 @@
         <hr>
         <p class="copyright">&copy; Gamecomm Indonesia - All Rights Reserved</p>
     </footer>
+    
+    <script>
+        window.scrollTo({
+        top: 1000,  
+        behavior: 'smooth' 
+    });
+    </script>
 </body>
 </html>
