@@ -131,20 +131,6 @@ header .signup-btn {
     color: #ffffff;
 }
 
-/* POP UP SURUH LOGIN */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(54, 54, 54, 0.7); /* abu-abu dengan transparansi */
-    display: none; /* awalnya tersembunyi */
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
 
 /*Bagian Body*/
 .pertama {
@@ -251,6 +237,7 @@ header .signup-btn {
     width: 30%;
     border-radius: 10px;
     text-align: center;
+    
 }
 
 .news-item img {
