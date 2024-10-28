@@ -6,6 +6,23 @@
     <title>artikel</title>
     <link rel="stylesheet" href="isiarticle.css">
     <script src="https://kit.fontawesome.com/091372dc96.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/emoji-button.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('#emoji-btn');
+            const textarea = document.querySelector('#comment-textarea');
+            const emojiDisplay = document.querySelector('#emoji-display');
+    
+            button.addEventListener('click', () => {
+                // Menampilkan gambar di bawah textarea
+                emojiDisplay.style.display = 'block'; // Tampilkan div
+            });
+        });
+    </script>
+    
+    
+
 </head>
 <body>
 
@@ -29,21 +46,18 @@
 
     <main>
         <section class="article-content">
-            <h1>Lorem ipsum dolor amet, consectetur adipiscing elit.</h1>
+            <h1>Peran DEI dalam Ekspansi Global: Bandai Namco Online Berbagi Perspektif di CEDEC 2024.</h1>
             <div class="article-image">
-                <img src="img/related 2.png" alt="Article Image">
+                <img src="img/img1.png" alt="Article Image">
             </div>
-            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Felis vestibulum conubia pulvinar cubilia, maximus integer sodales. Suspendisse parturient hendrerit finibus morbi augue vel vestibulum egestas. Auctor fringilla hendrerit fusce mollis magnis potenti. Pretium aptent vivamus facilisis orci nam montes hendrerit platea neque.</p>
+            <p>Dalam beberapa tahun terakhir, unsur Diversity, Equity, and Inclusion (DEI) semakin sering muncul dalam video game, yang mendapat tanggapan beragam dari komunitas gamer. Bandai Namco Online, melalui seminar di Japan’s CEDEC 2024, menyampaikan pandangan mereka mengenai pentingnya unsur DEI, terutama dalam upaya mereka memperluas pasar ke luar Jepang, termasuk ke pasar Barat. Contoh nyata dari upaya ini adalah pada game seperti Blue Protocol dan Gundam Evolution yang menargetkan audiens global.</p>
 
             <div class="article-image">
-                <img src="img/related 1.png" alt="Article Image">
+                <img src="img/img2.jpg" alt="Article Image">
             </div>
-            <p>LLorem ipsum odor amet, consectetuer adipiscing elit. Sit morbi id duis neque; nullam at. Blandit volutpat convallis vestibulum taciti consequat. Etiam quam mus, curae cras sociosqu odio. Accumsan libero ullamcorper est dictumst pretium erat; mi bibendum. Integer suscipit non ipsum; habitasse malesuada vestibulum viverra. </p><br>
-            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. 
-                vehicula auctor platea sed tellus ac nam. Ligula dictum sapien        
-                nam adipiscing mauris ornare eu. Ullamcorper vehicul sed 
-                euismod commodo sit conubia nam. Bibendum convallis varius nisl
-                litora justo enim ligula dignissim. Porta arcu class amet pellentesque class dolor. Nullam nunc tristique turpis magnis nostra. Malesuada interdum luctus primis euismod non platea integer.</p>
+            <p>Bandai Namco Online menyadari pentingnya DEI berdasarkan masukan dari perusahaan luar negeri dan survei yang menunjukkan bahwa sebagian besar gamer di Amerika Serikat dan Inggris menganggap DEI sebagai hal penting. Mereka melihat DEI sebagai peluang untuk memperluas cakupan konten dan menarik lebih banyak pemain. Bandai Namco mulai mengeksplorasi keberagaman dalam fitur karakter, termasuk variasi gaya rambut, fitur wajah, dan opsi aksesibilitas yang lebih baik, seperti yang telah diterapkan dalam game fighting seperti Tekken 8 dan Street Fighter 6. </p><br>
+            <p>
+                Meskipun demikian, Bandai Namco Online juga menyadari risiko dari penerapan DEI yang berlebihan, yang dapat merusak setting game dan dianggap sebagai langkah performatif. Mereka memberikan contoh tentang bagaimana penerapan DEI yang tidak proporsional dapat mengganggu narasi game. Selain itu, perusahaan juga fokus memberikan pemahaman kepada staf mereka tentang topik DEI melalui pelatihan internal, sambil tetap terbuka untuk meneliti pendekatan yang tepat dalam menggabungkan unsur DEI tanpa mengorbankan integritas game.</p>
         </section>
 
         <aside class="sidebar">
@@ -64,9 +78,17 @@
                     <li><strong>Kiwiw</strong>: YOOOOOOOOO</li>
                     <li><strong>Sep</strong>: Lorem ipsum dolor sit amet...</li>
                 </ul>
-                <textarea placeholder="Type your comment here..."></textarea>
+                <!-- Wrapper untuk textarea dan tombol emoticon -->
+                <div class="textarea-wrapper">
+                    <textarea id="comment-textarea" placeholder="Type your comment here..."></textarea>
+                    <button id="emoji-btn" class="emoji-btn"><i class="fa-regular fa-face-smile"></i></button>
+                </div>
+                <div id="emoji-display" style="display:none;">
+                   <div></div>
+                </div>
+                
             </div>
-
+            
             <div class="related-section">
                 <h1>Related Article</h1>
                 <div class="related-item">
@@ -127,4 +149,5 @@
         <p class="copyright">Gamecomm Indonesia - All Rights Reserved</p>
     </footer>
 </body>
+
 </html>

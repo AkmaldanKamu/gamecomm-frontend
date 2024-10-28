@@ -448,4 +448,30 @@ hr {
 }
     
 
+.textarea-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara textarea dan tombol emoji */
+}
+
+.textarea-wrapper textarea {
+    flex: 1; /* Textarea mengambil seluruh sisa ruang */
+    height: 60px;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #444;
+    color: #fff;
+    resize: none; /* Menghilangkan kemampuan untuk mengubah ukuran textarea */
+}
+
+.emoji-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Ukuran ikon emoticon */
+    padding: 0 10px; /* Memberikan sedikit padding di sekitar tombol emoji */
+    line-height: 1; /* Mengatur tinggi baris tombol agar tidak melebar */
+    color: #fff; /* Warna ikon */
+}
 
