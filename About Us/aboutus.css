@@ -1,11 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}   
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+}
 
 body {
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-color: #333333;
     color: #fff;
     line-height: 1.6;
@@ -23,15 +25,15 @@ body::-webkit-scrollbar-thumb {
     background: grey;
 }
 
-
+/*Header Page*/
 header {
     position: sticky;
     top: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 90px;
-    background: rgb(53, 52, 52);
+    padding: 8px 90px;
+    background: linear-gradient(to right, rgb(56, 56, 56), rgb(56, 56, 56), black);
     height: 90px;
     z-index: 999;
 }
@@ -39,8 +41,8 @@ header {
 
 header .logo img {
     position: relative;
-    margin-top: 10px;
-    right: 30px;
+    margin-top: 3px;
+    right: 8px;
     width: 170px;
     max-height: 80px;
 }
@@ -56,9 +58,9 @@ header nav ul {
     list-style-type: none;
     display: flex;
     gap: 70px;
-    margin-left: 180px;
-    margin-right: 90px;
-    margin-top: 10px;
+    margin-left: -20px; /* Kadang pas kadang nggak, agak aneh apa yang bikin begitu */
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 header nav ul li {
@@ -109,7 +111,10 @@ header .signup-btn {
     color: white
     
 }
- 
+
+header {
+    transition: transform 0.3s ease;
+}
 
 .signup-btn {
     padding: 10px 20px;
@@ -125,122 +130,304 @@ header .signup-btn {
     color: #ffffff;
 }
 
-section{
-    padding: 390px 100px;
-}
 
-.home {
-    position: relative;
+/* container 1 */
+.container-1 {
     width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: grey;
+    height: 490 px;
+    position: relative;
+    z-index:0;
 }
 
-
-.home video{
-    z-index: 000;
-    position: absolute;
-    top: 0;
-    left: 0;
+video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-
-
-.m1{
-    background-image: url('BG.png');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
+/* First Section */
+.first{
+    margin-inline: 80px;
+    padding: 50px;
+    color: azure;
 }
 
-.ya{
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling h1 dan p di dalam kelas first */
+.first h1, .first p {
+    text-align: center;
+    opacity: 0; /* Mulai dengan tidak terlihat */
+    transform: translateY(20px); /* Posisi lebih rendah */
+    transition: all 0.5s ease-out; /* Transisi halus */
+}
+
+ /* Kelas animate untuk memicu animasi */
+    .animate {
+        opacity: 1;
+        transform: translateY(0);
+        animation: slide-up 0.5s ease-out forwards;
+    }
+
+/* container 2 */
+.container-2 {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    margin-left: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (max-width: 768px) {
+    .container-2 {
+        grid-template-columns: 1fr; /* grid berubah menjadi menurun saat layar kecil */
+    }
+}
+
+.box {
+    background: linear-gradient(180deg, #575757, #7e7e7e);
+    padding: 20px;
+    color: azure;
+    border-radius: 8px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+
+    p {
+        margin-block-end: 0;
+    }
+    
+    opacity: 0; /* Mulai dalam keadaan transparan */
+    transform: translateY(-20px); /* Mulai dengan sedikit pergeseran ke atas */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Durasi dan jenis transisi */
+}
+
+.box.show {
+    opacity: 1; /* Menjadi terlihat */
+    transform: translateY(0); /* Kembali ke posisi awal */
+}
+
+.checkmark {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color:#333;
+
+    p {
+        font-size: clamp(1rem, 1.3vw, 2rem);
+        line-height: 1.5;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* container 3 */
+.container-3 {
+    text-align: center;        
+    margin-bottom: 70px;
+    margin-top: 100px;
+    grid-auto-rows: 1fr;
+}
+
+.container-3 h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: azure;
+}
+
+.container-3 p {
+    font-size: clamp(1.3rem, 1vw, 1.5rem);
+    color: azure;
+}
+
+.container-portbox{
+    display: flex;
+    gap: 300px;
+}
+
+/* Portfolio box styling */
+.portbox-1, .portbox-2, .portbox-3{
+    background-color: #333;
+    border-radius: 8px;
+    color: azure;
+    padding: 20px;
+    width: 75%;
+    text-align: start;
+    margin: 40px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-left: 8px solid;
+    border-image: linear-gradient(to bottom, #575757, #7e7e7e) 1; /* Gradient border */
+}
+
+.portbox-1 p {
+    font-size: clamp(1rem, 1vw, 1rem);
+    line-height: 1.6;
+}
+
+.portbox-2 p {
+    font-size: clamp(1rem, 1vw, 1rem);
+    line-height: 1.6;
+}
+
+.portbox-3 p {
+    font-size: clamp(1rem, 1vw, 1rem);
+    line-height: 1.6;
+}
+
+.portbox-1 h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+
+.portbox-2 h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+
+.portbox-3 h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+
+
+/* Company Profile Section */
+.company-profile {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    color: azure;
+}
+
+.judul-company {
+    width: 100%;
+    text-align: center;
+    font-size: 2.9rem;
+    margin-bottom: 50px;
+}
+
+.many-image-company,
+.many-image-company-2 {
+    display: flex;
+    padding: 70px;
+    margin: 20px 0;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.many-image-company {
+    margin-left: 30px;
+}
+
+.many-image-company-2 {
+    padding: 40px;
+    text-align: right;
+    margin-left: 256px;
+}
+
+.gambar-company {
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
+}
+
+/* Animasi saat elemen masuk ke dalam viewport */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: slideIn 1s forwards;
+}
+
+/* Script untuk menambahkan kelas 'animate' ketika elemen muncul di viewport */
+
+
+.container-collaboration {
+    display: flex;
+    background-color: #adadad;
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-section {
+    margin-left: 15px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 75px;
-}
-
-.logoG{
-    width: 500px;
+    width: 90%;
     height: auto;
 }
 
-.m1 h2{
-    max-width: 500px;
-    color: #fff;
-    font-family: sans-serif;
+.image-section img {
+    width: 160%;
+    height: 116.5%;
+    max-width: 120%;
+    object-fit: cover;
 }
 
-.con1{
-    background-color: #272727;
-    padding-top: 100px;
-    padding-bottom: 100px;
+.text-section {
+    margin-top: 40px;
+    margin-left: 40px;
+    padding: 20px;
+    color: #333;
 }
 
-.cont{
-    color: #ffffff;
-    font-family: sans-serif;
-    font-size: larger;
-    text-align: center;
-    margin-inline: 150px;
+.text-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.con2{
-    background-color: #3F4445;
-    padding-top: 100px;
-    padding-bottom: 100px;
+.text-section h1 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
 }
 
-.con2 h2{
-    color: #fff;
-    font-family: sans-serif;
-    text-align: left;
-    margin-inline: 150px;
-}
-
-.con2 p{
-    color: #fff;
-    font-family: sans-serif;
-    font-size: larger;
-    text-align: left;
-    margin-inline: 150px;
-}
-
-.partner{
-    background-color: #7c7c7c;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    padding-bottom: 5%;
-}
-
-.partner h2{    
-    color: #fff;
-    text-align: center;
-    font-family: sans-serif;
-    margin-top: -30px;
-    padding-bottom: 25px;
-}
-
-.logo{
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    align-items: center;
-    margin: 20px;
-    gap: 47px;
-}
-
-.logo img{
-    width: 110px;
-    height: auto;
+.text-section p {
+    margin-top: 20px;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
 
@@ -273,9 +460,11 @@ footer {
     flex-basis: 15%;
 }
 
-.logo {
-    width: 80px;
-    margin-bottom: 30px;
+.col .logo {
+    width: 130px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .col h3{
@@ -284,18 +473,30 @@ footer {
     position: relative;
 }
 
+.col .Links{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.col p {
+    font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
 .email-id{
     width: fit-content;
     border-bottom: 1px solid #ccc;
     margin: 20px 0;
 }
 
-ul li {
+.col ul li {
     list-style: none;
     margin-bottom: 12px;
+    margin-left: -20px;
 }
 
-ul li a {
+.col ul li a {
     text-decoration: none;
     color: white;
 }
@@ -356,6 +557,8 @@ hr {
 
 .copyright{
     text-align: center;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    margin-bottom: -5px;
 }
 
 .underline {
