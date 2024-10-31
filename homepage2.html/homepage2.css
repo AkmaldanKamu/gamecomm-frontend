@@ -115,7 +115,10 @@ header .signup-btn {
     color: white
     
 }
- 
+
+header {
+    transition: transform 0.3s ease;
+}
 
 .signup-btn {
     padding: 10px 20px;
