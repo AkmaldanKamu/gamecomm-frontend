@@ -17,15 +17,33 @@
         <nav class="nav-menu">
             <ul>
                 <li><a href="">Article</a></li>
-                <li><a href="">Event</a></li>
+                <li><a href="http://127.0.0.1:5501/Event%20Page/event.html">Event</a></li>
                 <li><a href="http://127.0.0.1:5501/homepage/News%20Page/news.html">News</a></li>
-                <li><a href="http://127.0.0.1:5500/AboutUs.html">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="http://127.0.0.1:5501/About%20Us/aboutus.html">About Us</a></li>
+                <li><a href="http://127.0.0.1:5501/Contact%20Us/index.html">Contact Us</a></li>
             </ul>
         </nav>
         
         <img src="https://i.pinimg.com/736x/6f/93/c7/6f93c71d621c7546442b927b57beefcc.jpg"><a href="http://127.0.0.1:5500/homepage/Manage%20user/user.html" class="signup-btn">Welcome, User</a>
     </header>
+
+    <script>
+        let lastScrollTop = 0;
+            const header = document.querySelector("header");
+
+            window.addEventListener("scroll", function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+        // Jika scroll ke bawah, sembunyikan header
+            header.style.transform = "translateY(-100%)";
+    } else {
+        // Jika scroll ke atas, tampilkan header
+            header.style.transform = "translateY(0)";
+    }
+        lastScrollTop = scrollTop;
+    });
+    </script>
 
 
     <!-- Home Section -->
@@ -78,19 +96,19 @@
         <h2>Latest News</h2>
         <div class="news-grid">
             <div class="news-item">
-                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 1">
-                <h3>News Title 1</h3>
-                <p>Brief description about the news.</p>
+                <img src="SAMPLE 1.png" alt="News Image 1">
+                <h3>Update Terbaru Star Wars: Outlaws Rusak</h3>
+                <p>Save File Pemain PS5 Terpaksa Mulai Ulang</p>
             </div>
             <div class="news-item">
-                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 2">
-                <h3>News Title 2</h3>
-                <p>Brief description about the news.</p>
+                <img src="SAMPLE 2.jpg" alt="News Image 2">
+                <h3>Black Myth: Wukong Kena Review Bombing di Metacritic</h3>
+                <p>Skor Terjun Bebas Akibat Sentimen Politik dan Keluhan Teknis</p>
             </div>
             <div class="news-item">
-                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 3">
-                <h3>News Title 3</h3>
-                <p>Brief description about the news.</p>
+                <img src="SAMPLE 3.jpg" alt="News Image 3">
+                <h3>Dustborn Dapat Serangan Ujaran Kebencian</h3>
+                <p>Developer Minta Gamer Hentikan Ujaran Kebencian</p>
             </div>
         </div>
     </section>
