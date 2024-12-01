@@ -16,15 +16,34 @@
         <nav class="nav-menu">
             <ul>
                 <li><a onclick="showPopup()">Article</a></li>
-                <li><a href="">Event</a></li>
+                <li><a onclick="showPopup()">Event</a></li>
                 <li><a href="http://127.0.0.1:5501/homepage/News%20Page/news.html">News</a></li>
                 <li><a href="http://127.0.0.1:5500/About%20Us/aboutus.html">About Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
         
-        <a href="http://127.0.0.1:5500/homepage/Manage%20user/user.html" class="signup-btn">Sign Up</a>
+        <a href="http://127.0.0.1:5501/login.html" class="signup-btn">Sign Up</a>
     </header>
+
+    <!--For Header Slide Automatic-->
+    <script>
+        let lastScrollTop = 0;
+            const header = document.querySelector("header");
+
+            window.addEventListener("scroll", function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+        // Jika scroll ke bawah, sembunyikan header
+            header.style.transform = "translateY(-100%)";
+    } else {
+        // Jika scroll ke atas, tampilkan header
+            header.style.transform = "translateY(0)";
+    }
+        lastScrollTop = scrollTop;
+    });
+    </script>
 
     <!-- Bagian overlay dan popup -->
   <div class="overlay" id="popupOverlay">
@@ -32,7 +51,7 @@
       <div class="popup-content">
         <p>Login Dulu Yuk! Supaya bisa<br>akses semua fitur Website Gamecomm Indonesia!</p>
       </div>
-      <video class="video-zivana" src="20 detik.mp4" alt="Gambar kanan" autoplay muted loop></video>
+      <img class="video-zivana" src="ziva-love.png" alt="Gambar kanan">
     </div>
   </div>
 
@@ -99,26 +118,26 @@
     }
     </style>
 
-    <section class="latest-news">
-        <h2>Latest News</h2>
-        <div class="news-grid">
-            <div class="news-item">
-                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 1">
-                <h3>News Title 1</h3>
-                <p>Brief description about the news.</p>
-            </div>
-            <div class="news-item">
-                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 2">
-                <h3>News Title 2</h3>
-                <p>Brief description about the news.</p>
-            </div>
-            <div class="news-item">
-                <img src="https://i.pinimg.com/736x/a7/02/e2/a702e26f74c1acd3063e9f575241bfca.jpg" alt="News Image 3">
-                <h3>News Title 3</h3>
-                <p>Brief description about the news.</p>
-            </div>
+<section class="latest-news">
+    <h2>Latest News</h2>
+    <div class="news-grid">
+        <div class="news-item">
+            <img src="SAMPLE 1.png" alt="News Image 1">
+            <h3>Update Terbaru Star Wars: Outlaws Rusak</h3>
+            <p>Save File Pemain PS5 Terpaksa Mulai Ulang</p>
         </div>
-    </section>
+        <div class="news-item">
+            <img src="SAMPLE 2.jpg" alt="News Image 2">
+            <h3>Black Myth: Wukong Kena Review Bombing di Metacritic</h3>
+            <p>Skor Terjun Bebas Akibat Sentimen Politik dan Keluhan Teknis</p>
+        </div>
+        <div class="news-item">
+            <img src="SAMPLE 3.jpg" alt="News Image 3">
+            <h3>Dustborn Dapat Serangan Ujaran Kebencian</h3>
+            <p>Developer Minta Gamer Hentikan Ujaran Kebencian</p>
+        </div>
+    </div>
+</section>
     
 
     <!-- Partners Section -->
@@ -136,7 +155,7 @@
             <img src="/About Us/BI 3.png">
             <img src="/About Us/BCA SHADOW.png">
             <img src="/About Us/BNI PUTIH.png">
-            <img class="imbalance-logo" src="logo imbalance.png">
+            <img class="imbalance-logo" src="logo imbalance (1).png">
             <img src="/About Us/BOB-logo_vertical-white-on-color.png">
             <img src="/About Us/TOGO LOGO baru shadow.png">
             <img src="/About Us/LOGO SERENA VETOR.png">
@@ -183,8 +202,8 @@
         <img class="video-slide active" src="IMG_7656.jpg" autoplay muted loop></video>
         <video class="video-slide" src="BOG.mp4" autoplay muted loop></video>
         <video class="video-slide" src="sekuya.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="https://v1.pinimg.com/videos/mc/720p/64/2c/d3/642cd381c872075ae75a228284b262de.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="https://v1.pinimg.com/videos/mc/720p/3d/42/cb/3d42cb828c011bdaf2d87f1c98dddd71.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="slide4home.mp4" autoplay muted loop></video>
+        <img class="video-slide" src="KOLASEEE.png" autoplay muted loop></video>
 
         <div class="content active">
             <h1>Company<br><span>Profile</span></h1>
