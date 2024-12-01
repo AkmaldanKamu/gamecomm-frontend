@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamecomm Indonesia</title>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="icon" href="GC INDO 2.png" type="image/x-icon">
+    <link rel="stylesheet" href="homepage2.css">
     <script src="https://kit.fontawesome.com/091372dc96.js"></script>
 </head>
 <body>
+
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
+
     <!-- Header Section -->
     <header>
         <div class="logo">
@@ -15,62 +21,18 @@
         </div>
         <nav class="nav-menu">
             <ul>
-                <li><a onclick="showPopup()">Article</a></li>
-                <li><a onclick="showPopup()">Event</a></li>
+                <li><a href="http://127.0.0.1:5501/Article/Isi%20Article%202/isiarticle.html">Article</a></li>
+                <li><a href="http://127.0.0.1:5501/Event%20Page/event.html">Event</a></li>
                 <li><a href="http://127.0.0.1:5501/homepage/News%20Page/news.html">News</a></li>
-                <li><a href="http://127.0.0.1:5500/About%20Us/aboutus.html">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="http://127.0.0.1:5501/About%20Us/aboutus.html">About Us</a></li>
+                <li><a href="http://127.0.0.1:5501/Contact%20Us/contact%20us.html">Contact Us</a></li>
             </ul>
         </nav>
         
-        <a href="http://127.0.0.1:5501/login.html" class="signup-btn">Sign Up</a>
+        <img src="https://i.pinimg.com/736x/6f/93/c7/6f93c71d621c7546442b927b57beefcc.jpg"><a href="http://127.0.0.1:5500/homepage/Manage%20user/user.html" class="signup-btn">Welcome, User</a>
     </header>
 
-    <!--For Header Slide Automatic-->
-    <script>
-        let lastScrollTop = 0;
-            const header = document.querySelector("header");
-
-            window.addEventListener("scroll", function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop) {
-        // Jika scroll ke bawah, sembunyikan header
-            header.style.transform = "translateY(-100%)";
-    } else {
-        // Jika scroll ke atas, tampilkan header
-            header.style.transform = "translateY(0)";
-    }
-        lastScrollTop = scrollTop;
-    });
-    </script>
-
-    <!-- Bagian overlay dan popup -->
-  <div class="overlay" id="popupOverlay">
-    <div class="popup">
-      <div class="popup-content">
-        <p>Login Dulu Yuk! Supaya bisa<br>akses semua fitur Website Gamecomm Indonesia!</p>
-      </div>
-      <img class="video-zivana" src="ziva-love.png" alt="Gambar kanan">
-    </div>
-  </div>
-
-
-  <script>
-    // Fungsi untuk menampilkan popup
-    function showPopup() {
-      document.getElementById('popupOverlay').classList.add('active');
-    }
-
-    // Fungsi untuk menutup popup saat klik di luar kotak
-    document.getElementById('popupOverlay').addEventListener('click', function(event) {
-      if (event.target === this) {
-        this.classList.remove('active');
-      }
-    });
-  </script>
-
-
+    
 
     <!-- Home Section -->
     <section class="pertama">
@@ -94,7 +56,6 @@
 
             text.style.marginTop = value * 0.9 + 'px';
             image.style.marginTop = value * 1.0 + 'px';
-
         });
     </script>
 
@@ -118,26 +79,26 @@
     }
     </style>
 
-<section class="latest-news">
-    <h2>Latest News</h2>
-    <div class="news-grid">
-        <div class="news-item">
-            <img src="SAMPLE 1.png" alt="News Image 1">
-            <h3>Update Terbaru Star Wars: Outlaws Rusak</h3>
-            <p>Save File Pemain PS5 Terpaksa Mulai Ulang</p>
+    <section class="latest-news">
+        <h2>Latest News</h2>
+        <div class="news-grid">
+            <div class="news-item">
+                <img src="SAMPLE 1 copy.png" alt="News Image 1">
+                <h3>Update Terbaru Star Wars: Outlaws Rusak</h3>
+                <p>Save File Pemain PS5 Terpaksa Mulai Ulang</p>
+            </div>
+            <div class="news-item">
+                <img src="SAMPLE 1 copy.png" alt="News Image 2">
+                <h3>Black Myth: Wukong Kena Review Bombing di Metacritic</h3>
+                <p>Skor Terjun Bebas Akibat Sentimen Politik dan Keluhan Teknis</p>
+            </div>
+            <div class="news-item">
+                <img src="SAMPLE 1 copy.png" alt="News Image 3">
+                <h3>Dustborn Dapat Serangan Ujaran Kebencian</h3>
+                <p>Developer Minta Gamer Hentikan Ujaran Kebencian</p>
+            </div>
         </div>
-        <div class="news-item">
-            <img src="SAMPLE 2.jpg" alt="News Image 2">
-            <h3>Black Myth: Wukong Kena Review Bombing di Metacritic</h3>
-            <p>Skor Terjun Bebas Akibat Sentimen Politik dan Keluhan Teknis</p>
-        </div>
-        <div class="news-item">
-            <img src="SAMPLE 3.jpg" alt="News Image 3">
-            <h3>Dustborn Dapat Serangan Ujaran Kebencian</h3>
-            <p>Developer Minta Gamer Hentikan Ujaran Kebencian</p>
-        </div>
-    </div>
-</section>
+    </section>
     
 
     <!-- Partners Section -->
@@ -174,7 +135,6 @@
             <img src="/About Us/rev.png">
             <img src="/About Us/LOGO BOBOBOX TRANSPARANT.png">
             <img src="/About Us/w3gg`.png">
-            <img src="/About Us/Logo-VCG.png">
             <img src="/About Us/RRI LOGO 2.png">
             <img src="/About Us/AGI.png">
             <img src="/About Us/ATTN.png">
@@ -182,21 +142,17 @@
             <img src="/About Us/plextone 2.png">
             <img src="/About Us/Koding Next 2.png">
             <img src="/About Us/2.png">
-            <img src="4.png">
+            <img src="NUON Melon Telkom.jpg">
             <img src="/About Us/Logo Wu Hub.png">
             <img src="/About Us/loklok.png">
             <img src="/About Us/FF v.1.png">
             <img src="/About Us/MLbb (2).png">
             <img src="/About Us/Logo Smashing Feathers.png">
             <img src="/About Us/LogoWhite.png">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
             <img src="/About Us/CS2 v.1.png">
         </div>
     </section>
-
+    
     <!-- Expo Section -->
     <section class="home">
         <img class="video-slide active" src="IMG_7656.jpg" autoplay muted loop></video>
@@ -211,17 +167,17 @@
             <a href="#">Read More</a>
         </div>
         <div class="content">
-            <h1>Event<br><span>Activation</span></h1>
+            <h1>PROGRAM</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non ligula accumsan, viverra tellus quis, eleifend lacus. Curabitur quis justo diam. Nunc sit amet dapibus ante. Sed sit amet finibus nisi. Phasellus viverra nulla eros, et tempor sapien dignissim at. Vivamus mollis tempus ante at vehicula. In hac habitasse platea dictumst. Praesent lectus enim, posuere in posuere vitae, vestibulum id mi. Donec nec ultricies arcu. Vivamus sodales enim vestibulum nibh scelerisque luctus. Ut nec nisl at velit lobortis tempus sed sit amet nisl. Maecenas interdum erat eu est lobortis consectetur</p>
             <a href="#">Read More</a>
         </div>
         <div class="content">
-            <h1>Collaboration<br><span>IP</span></h1>
+            <h1>Collaboration</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non ligula accumsan, viverra tellus quis, eleifend lacus. Curabitur quis justo diam. Nunc sit amet dapibus ante. Sed sit amet finibus nisi. Phasellus viverra nulla eros, et tempor sapien dignissim at. Vivamus mollis tempus ante at vehicula. In hac habitasse platea dictumst. Praesent lectus enim, posuere in posuere vitae, vestibulum id mi. Donec nec ultricies arcu. Vivamus sodales enim vestibulum nibh scelerisque luctus. Ut nec nisl at velit lobortis tempus sed sit amet nisl. Maecenas interdum erat eu est lobortis consectetur</p>
             <a href="#">Read More</a>
         </div>
         <div class="content">
-            <h1>Make Division<br><span>For Actiovation</span></h1>
+            <h1>Make Division<br><span>For Activation</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non ligula accumsan, viverra tellus quis, eleifend lacus. Curabitur quis justo diam. Nunc sit amet dapibus ante. Sed sit amet finibus nisi. Phasellus viverra nulla eros, et tempor sapien dignissim at. Vivamus mollis tempus ante at vehicula. In hac habitasse platea dictumst. Praesent lectus enim, posuere in posuere vitae, vestibulum id mi. Donec nec ultricies arcu. Vivamus sodales enim vestibulum nibh scelerisque luctus. Ut nec nisl at velit lobortis tempus sed sit amet nisl. Maecenas interdum erat eu est lobortis consectetur</p>
             <a href="#">Read More</a>
         </div>
@@ -329,5 +285,12 @@
         behavior: 'smooth' 
     });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            setTimeout(function(){
+                $('.loader_bg').fadeToggle();
+        }, 1500);
+</script>
 </body>
 </html>
