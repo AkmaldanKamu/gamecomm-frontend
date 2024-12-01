@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamecomm Indonesia</title>
-    <link rel="icon" href="GC INDO 2.png" type="image/x-icon">
     <link rel="stylesheet" href="homepage.css">
     <script src="https://kit.fontawesome.com/091372dc96.js"></script>
 </head>
@@ -16,17 +15,18 @@
         </div>
         <nav class="nav-menu">
             <ul>
-                <li><a href="">Article</a></li>
-                <li><a href="http://127.0.0.1:5501/Event%20Page/event.html">Event</a></li>
+                <li><a onclick="showPopup()">Article</a></li>
+                <li><a onclick="showPopup()">Event</a></li>
                 <li><a href="http://127.0.0.1:5501/homepage/News%20Page/news.html">News</a></li>
-                <li><a href="http://127.0.0.1:5501/About%20Us/aboutus.html">About Us</a></li>
-                <li><a href="http://127.0.0.1:5501/Contact%20Us/index.html">Contact Us</a></li>
+                <li><a href="http://127.0.0.1:5500/About%20Us/aboutus.html">About Us</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
         
-        <img src="https://i.pinimg.com/736x/6f/93/c7/6f93c71d621c7546442b927b57beefcc.jpg"><a href="http://127.0.0.1:5500/homepage/Manage%20user/user.html" class="signup-btn">Welcome, User</a>
+        <a href="http://127.0.0.1:5501/login.html" class="signup-btn">Sign Up</a>
     </header>
 
+    <!--For Header Slide Automatic-->
     <script>
         let lastScrollTop = 0;
             const header = document.querySelector("header");
@@ -44,6 +44,32 @@
         lastScrollTop = scrollTop;
     });
     </script>
+
+    <!-- Bagian overlay dan popup -->
+  <div class="overlay" id="popupOverlay">
+    <div class="popup">
+      <div class="popup-content">
+        <p>Login Dulu Yuk! Supaya bisa<br>akses semua fitur Website Gamecomm Indonesia!</p>
+      </div>
+      <img class="video-zivana" src="ziva-love.png" alt="Gambar kanan">
+    </div>
+  </div>
+
+
+  <script>
+    // Fungsi untuk menampilkan popup
+    function showPopup() {
+      document.getElementById('popupOverlay').classList.add('active');
+    }
+
+    // Fungsi untuk menutup popup saat klik di luar kotak
+    document.getElementById('popupOverlay').addEventListener('click', function(event) {
+      if (event.target === this) {
+        this.classList.remove('active');
+      }
+    });
+  </script>
+
 
 
     <!-- Home Section -->
@@ -92,26 +118,26 @@
     }
     </style>
 
-    <section class="latest-news">
-        <h2>Latest News</h2>
-        <div class="news-grid">
-            <div class="news-item">
-                <img src="SAMPLE 1.png" alt="News Image 1">
-                <h3>Update Terbaru Star Wars: Outlaws Rusak</h3>
-                <p>Save File Pemain PS5 Terpaksa Mulai Ulang</p>
-            </div>
-            <div class="news-item">
-                <img src="SAMPLE 2.jpg" alt="News Image 2">
-                <h3>Black Myth: Wukong Kena Review Bombing di Metacritic</h3>
-                <p>Skor Terjun Bebas Akibat Sentimen Politik dan Keluhan Teknis</p>
-            </div>
-            <div class="news-item">
-                <img src="SAMPLE 3.jpg" alt="News Image 3">
-                <h3>Dustborn Dapat Serangan Ujaran Kebencian</h3>
-                <p>Developer Minta Gamer Hentikan Ujaran Kebencian</p>
-            </div>
+<section class="latest-news">
+    <h2>Latest News</h2>
+    <div class="news-grid">
+        <div class="news-item">
+            <img src="SAMPLE 1.png" alt="News Image 1">
+            <h3>Update Terbaru Star Wars: Outlaws Rusak</h3>
+            <p>Save File Pemain PS5 Terpaksa Mulai Ulang</p>
         </div>
-    </section>
+        <div class="news-item">
+            <img src="SAMPLE 2.jpg" alt="News Image 2">
+            <h3>Black Myth: Wukong Kena Review Bombing di Metacritic</h3>
+            <p>Skor Terjun Bebas Akibat Sentimen Politik dan Keluhan Teknis</p>
+        </div>
+        <div class="news-item">
+            <img src="SAMPLE 3.jpg" alt="News Image 3">
+            <h3>Dustborn Dapat Serangan Ujaran Kebencian</h3>
+            <p>Developer Minta Gamer Hentikan Ujaran Kebencian</p>
+        </div>
+    </div>
+</section>
     
 
     <!-- Partners Section -->
@@ -156,7 +182,7 @@
             <img src="/About Us/plextone 2.png">
             <img src="/About Us/Koding Next 2.png">
             <img src="/About Us/2.png">
-            <img src="NUON Melon Telkom.jpg">
+            <img src="4.png">
             <img src="/About Us/Logo Wu Hub.png">
             <img src="/About Us/loklok.png">
             <img src="/About Us/FF v.1.png">
@@ -176,8 +202,8 @@
         <img class="video-slide active" src="IMG_7656.jpg" autoplay muted loop></video>
         <video class="video-slide" src="BOG.mp4" autoplay muted loop></video>
         <video class="video-slide" src="sekuya.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="https://v1.pinimg.com/videos/mc/720p/64/2c/d3/642cd381c872075ae75a228284b262de.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="https://v1.pinimg.com/videos/mc/720p/3d/42/cb/3d42cb828c011bdaf2d87f1c98dddd71.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="slide4home.mp4" autoplay muted loop></video>
+        <img class="video-slide" src="KOLASEEE.png" autoplay muted loop></video>
 
         <div class="content active">
             <h1>Company<br><span>Profile</span></h1>
